@@ -1,7 +1,11 @@
 export default [
   {
     name: 'title',
-    message: 'Project Title:'
+    message: 'Project Title:',
+    validate (input)  {
+      if (input.length) return true
+      return 'A Project Title is required'
+    }
   },
   {
     name: 'description',
