@@ -1,0 +1,28 @@
+{
+  "name": "readme_generator",
+  "version": "0.0.1",
+  "description": "A command-line application to quickly generate a high-quality, professional README.md",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcarson24/readme_generator.git"
+  },
+  "keywords": [
+    "readme",
+    "generator",
+    "readme.md"
+  ],
+  "author": "matthew.carson@pm.me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcarson24/readme_generator/issues"
+  },
+  "homepage": "https://github.com/mcarson24/readme_generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.2"
+  }
+}
