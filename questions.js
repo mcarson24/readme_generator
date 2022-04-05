@@ -8,7 +8,7 @@ export default [
       if (!input.length) return 'A Project Title is required'
       return true
     },
-    filter: input => `# ${input}`,
+    filter: input => `# ${input}\n`,
   },
   {
     name: 'description',
@@ -18,26 +18,26 @@ export default [
       if (!input.length) return 'A description is required'
       return true
     },
-    filter: input => `## Description\n${input}`
+    filter: input => `## Description\n${input}\n`
   },
   {
     name: 'installation',
     message: 'Installation instructions' ,
-    filter: input => `## Installation Instructions\n${input}`
+    filter: input => `## Installation Instructions\n${input}\n`
   },
   {
     name: 'usage',
     message: 'Usuage information',
-    filter: input => `## Usage\n${input}`
+    filter: input => `## Usage\n${input}\n`
   },
   {
     name: 'contribution',
     message: 'Contribution guidelines',
-    filter: input => `## Contribution Guidelines\n${input}`
+    filter: input => `## Contribution Guidelines\n${input}\n`
   }, {
     name: 'test',
     message: 'Test instructions',
-    filter: input => `## Tests\n${input}`
+    filter: input => `## Tests\n${input}\n`
   },
   {
     name: 'license',
@@ -45,21 +45,23 @@ export default [
     type: 'list',
     choices: ['MIT', 'ISC', 'GNU GPLv3', 'Apache License 2.0'],
     filter: input => {
-      return `## License\n${licenses[input]}`.replace(/\s4/g, '')
+      return `## License\n${licenses[input]}\n`
     },
   },
   {
-    name: 'Github',
+    name: 'github',
     message: 'Github username',
     filter: (input, answers) => {
-      answers.questions = `#Questions?\n Have additional questions? I can be reached at [Github](https://github.com/${input})`
+      answers.questions = `## Questions?\nHave additional questions? I can be reached at [Github](https://github.com/${input})`
+      return input
     }
   },
   {
     name: 'email',
     message: 'E-mail address',
     filter: (input, answers) => {
-      answers.questions += ` or you can e-mail me at ${input}.`
+      answers.questions += ` or you can e-mail me at ${input}.\n`
+      return input
     }
   }
 ]

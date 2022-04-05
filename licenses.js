@@ -6,7 +6,7 @@ export default {
   MIT: `
 MIT License
   
-Copyright (c) ${year} [fullname]
+Copyright (c) ${year}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ SOFTWARE.
   'ISC': `
 ISC License
 
-Copyright (c) ${year} [fullname]
+Copyright (c) ${year}
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
@@ -678,7 +678,7 @@ PERFORMANCE OF THIS SOFTWARE.
   the "copyright" line and a pointer to where the full notice is found.
 
   <one line to give the program's name and a brief idea of what it does.>
-  Copyright (C) ${year}  <name of author>
+  Copyright (C) ${year}
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -698,7 +698,7 @@ PERFORMANCE OF THIS SOFTWARE.
   If the program does terminal interaction, make it output a short
   notice like this when it starts in an interactive mode:
 
-  <program>  Copyright (C) ${year}  <name of author>
+  <program>  Copyright (C) ${year}
   This program comes with ABSOLUTELY NO WARRANTY; for details type \`show w\'.
   This is free software, and you are welcome to redistribute it
   under certain conditions; type \`show c\' for details.
@@ -908,7 +908,7 @@ file or class name and description of purpose be included on the
 same "printed page" as the copyright notice for easier
 identification within third-party archives.
 
-Copyright ${year} [name of copyright owner]
+Copyright ${year}
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
