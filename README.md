@@ -11,11 +11,9 @@
 - [Contribution](#Contribution)
 - [Test](#Test)
 - [Questions](#Questions)
-- [github](#github)
-- [email](#email)
-- [Questions](Questions)
+
 ## Description
-A simple and easy-to-use package to create clean README.md files.
+A simple and easy-to-use package to create clean README.md files. 
 
 ## License
 

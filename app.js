@@ -7,9 +7,8 @@ import { questions, license } from './src/questions.js'
 const buildTableOfContents = answers => {
   let tableOfContents = '## Table of Contents\n'
   Object.keys(answers).forEach(answer => {
+    if (answer === 'github' || answer === 'email') return
     tableOfContents += `- [${answer}](#${answer})\n`
-    if (answer === 'email') tableOfContents += '- [Questions](Questions)'
-    if (answer === 'github') return
   })
   return `${tableOfContents}`
 }
