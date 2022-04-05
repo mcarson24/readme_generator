@@ -15,7 +15,7 @@ const questions = [
     // filter: input => `# ${input}\n <BADGE HERE>\n`,
   },
   {
-    name: 'description',
+    name: 'Description',
     message: 'Description:',
     type: 'editor',
     validate: input =>  {
@@ -25,7 +25,7 @@ const questions = [
     // filter: input => `## Description\n${input}\n`
   },
   {
-    name: 'license',
+    name: 'License',
     message: 'Choose a license',
     type: 'list',
     choices: ['MIT', 'ISC', 'GNU GPLv3', 'Apache License 2.0'],
@@ -35,21 +35,21 @@ const questions = [
     },
   },
   {
-    name: 'installation',
+    name: 'Installation',
     message: 'Installation instructions' ,
     // filter: input => `## Installation Instructions\n${input}\n`
   },
   {
-    name: 'usage',
+    name: 'Usage',
     message: 'Usuage information',
     // filter: input => `## Usage\n${input}\n`
   },
   {
-    name: 'contribution',
+    name: 'Contribution',
     message: 'Contribution guidelines',
     // filter: input => `## Contribution Guidelines\n${input}\n`
   }, {
-    name: 'test',
+    name: 'Test',
     message: 'Test instructions',
     // filter: input => `## Tests\n${input}\n`
   },

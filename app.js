@@ -14,6 +14,8 @@ const buildReadMe = answers => {
     }
     if (answer === 'title') {
       section += `![License](https://img.shields.io/badge/License-${license}-white?labelColor=green&style=flat)\n`
+    } else if (answer === 'license') {
+      section += `${licenses[license]}\n`
     } else {
       section += `${answers[answer]}\n`
     }
