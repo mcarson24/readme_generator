@@ -1,25 +1,27 @@
 import fs from 'fs'
 import inquirer from 'inquirer'
-import licenses  from './licenses.js'
-import { questions, license } from './questions.js'
+import licenses  from './src/licenses.js'
+import { questions, license } from './src/questions.js'
 
 const buildReadMe = answers => {
   for (const answer in answers) {
-    if (['github', 'email', 'questions'].includes(answer)) return
     let section = ''
+    if (['github', 'email', 'questions'].includes(answer)) return
+
     if (answer === 'title') {
       section += `# ${answers[answer]}\n`
     } else {
       section += `## ${answer}\n`
     }
+
     if (answer === 'title') {
       section += `![License](https://img.shields.io/badge/License-${license}-white?labelColor=green&style=flat)\n`
-    } else if (answer === 'license') {
+    } else if (answer === 'License') {
       section += `${licenses[license]}\n`
     } else {
       section += `${answers[answer]}\n`
     }
-    fs.appendFileSync('README.md', section, err => {
+    fs.appendFileSync('./README.md', section, err => {
       if (err) console.error(err)
     })
   }
@@ -27,10 +29,8 @@ const buildReadMe = answers => {
 
 inquirer
   .prompt(questions)
-  .then(answers => buildReadMe(answers))
-  .then(() => {
-    let file = fs.readFileSync('./README.md', { encoding:'utf8', flag:'r' })
-    file = file.replace(/<BADGE HERE>/, `![License](https://img.shields.io/badge/License-${license}-white?labelColor=green&style=flat)\n`)
-    fs.writeFileSync('./README.md', file)
+  .then(answers => {
+    fs.unlinkSync('./README.md', err => console.error(err))
+    buildReadMe(answers)
   })
   .catch(err => console.error(err))
