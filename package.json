@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/mcarson24/readme_generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.2"
+    "inquirer": "^8.2.2",
+    "luxon": "^2.3.1"
   }
 }
