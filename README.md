@@ -1,5 +1,19 @@
 # README Generator
+
 ![License](https://img.shields.io/badge/License-MIT-white?labelColor=green&style=flat)
+
+## Table of Contents
+- [title](#title)
+- [Description](#Description)
+- [License](#License)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contribution](#Contribution)
+- [Test](#Test)
+- [Questions](#Questions)
+- [github](#github)
+- [email](#email)
+
 ## Description
 A simple and easy-to-use package to create clean README.md files.
 
