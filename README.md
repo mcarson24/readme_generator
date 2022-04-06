@@ -1,4 +1,4 @@
-# My Project
+# README Generator
 
 ![License](https://img.shields.io/badge/License-MIT-white?labelColor=green&style=flat)
 
@@ -10,7 +10,11 @@
 - [Questions](#Questions)
 
 ## Description
-The description of My Project
+A simple and easy-to-use package to effortlessly create clean and professional README.md files.
+
+- Choose which sections to include
+- Choose between the type of license
+- Add Github and e-mail addresses.
 
 ## License
 
@@ -37,7 +41,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
   
 ## Installation
-```npm run install```
+```npm install```
 ## Test
 ```npm run test```
 ## Questions
