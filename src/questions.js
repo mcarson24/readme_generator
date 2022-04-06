@@ -4,7 +4,15 @@ const setLicense = inputLicense => {
   license = inputLicense
 }
 
+const includes = (answers, section) => answers.sections.includes(section)
+
 const questions = [
+  {
+    name: 'sections',
+    message: 'Which sections do you want to include in your README?',
+    type: 'checkbox',
+    choices: ['License', 'Installation', 'Usage', 'Contribution', 'Test', 'Github', 'E-mail']
+  },
   {
     name: 'title',
     message: 'Project Title:',
@@ -37,21 +45,21 @@ const questions = [
   {
     name: 'Installation',
     message: 'Installation instructions' ,
-    // filter: input => `## Installation Instructions\n${input}\n`
+    when: answers => includes(answers, 'Installation')
   },
   {
     name: 'Usage',
     message: 'Usuage information',
-    // filter: input => `## Usage\n${input}\n`
+    when: answers => includes(answers, 'Usage')
   },
   {
     name: 'Contribution',
     message: 'Contribution guidelines',
-    // filter: input => `## Contribution Guidelines\n${input}\n`
+    when: answers => includes(answers, 'Contribution')
   }, {
     name: 'Test',
     message: 'Test instructions',
-    // filter: input => `## Tests\n${input}\n`
+    when: answers => includes(answers, 'Test')
   },
   {
     name: 'github',
@@ -59,7 +67,8 @@ const questions = [
     filter: (input, answers) => {
       answers.Questions = `Have additional questions? I can be reached at [Github](https://github.com/${input})`
       return input
-    }
+    },
+    when: answers => includes(answers, 'Github')
   },
   {
     name: 'email',
@@ -67,7 +76,8 @@ const questions = [
     filter: (input, answers) => {
       answers.Questions += ` or you can e-mail me at ${input}.\n`
       return input
-    }
+    },
+    when: answers => includes(answers, 'E-mail')
   }
 ]
 

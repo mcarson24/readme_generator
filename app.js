@@ -4,10 +4,13 @@ import inquirer from 'inquirer'
 import licenses  from './src/licenses.js'
 import { questions, license } from './src/questions.js'
 
+const doNotInclude = ['github', 'email', 'sections', 'title']
+
 const buildTableOfContents = answers => {
+  
   let tableOfContents = '## Table of Contents\n'
   Object.keys(answers).forEach(answer => {
-    if (answer === 'github' || answer === 'email') return
+    if (doNotInclude.includes(answer)) return
     tableOfContents += `- [${answer}](#${answer})\n`
   })
   return `${tableOfContents}`
@@ -19,7 +22,7 @@ const buildReadMe = answers => {
 ![License](https://img.shields.io/badge/License-${license}-white?labelColor=green&style=flat)\n
 ${buildTableOfContents(answers)}\n`
   for (const answer in answers) {
-    if (!['title', 'github', 'email'].includes(answer)) {
+    if (!doNotInclude.includes(answer)) {
       section += `## ${answer}\n`
       
       if (answer === 'License') {
