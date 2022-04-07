@@ -8,7 +8,7 @@ inquirer
   .prompt(questions)
   .then(answers => {
     if (fs.existsSync(path.join(process.cwd(), './README.md'))) fs.unlinkSync('./README.md', err => console.error(err))
-    const builder = (new ReadMeBuilder(answers))
+    const builder = new ReadMeBuilder(answers)
     fs.appendFileSync('./README.md', builder.createBody(), err => {
       if (err) console.error(err)
     })
