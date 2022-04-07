@@ -4,12 +4,12 @@ export default class ReadMeBuilder {
   constructor(answers) {
     this.answers = answers
     this.ignore = ['github', 'email', 'sections', 'title']
-    this.body = ''
   }
 
   createTableOfContents() {
     let tableOfContents = '## Table of Contents\n'
 
+    // Create an entry in the table of contents for each required section
     Object.keys(this.answers).forEach(answer => {
       if (this.ignore.includes(answer)) return
       tableOfContents += `- [${answer}](#${answer})\n`
@@ -19,12 +19,14 @@ export default class ReadMeBuilder {
   }
 
   createBody() {
+    let body = ''
+    // The first section will include the title, description, and a table of contents.
     let section = `# ${this.answers['title']}\n`
-
     this.answers.sections.includes('License') ? section += `![License](https://img.shields.io/badge/License-${this.answers.License}-white?labelColor=green&style=flat)\n` : ''
     
     section += `${this.createTableOfContents()}\n`
     
+    // Create remaining sections
     for (const answer in this.answers) {
       if (!this.ignore.includes(answer)) {
         section += `## ${answer}\n`
@@ -34,12 +36,12 @@ export default class ReadMeBuilder {
         } else {
           section += `${this.answers[answer]}\n`
         }
-  
-        this.body += section
+        // Add the curent section to the body
+        body += section
         // Reset the section
         section = ''
       }
     }
-    return this.body
+    return body
   }
 }
