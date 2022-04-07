@@ -15,12 +15,14 @@ export default class ReadMeBuilder {
       tableOfContents += `- [${answer}](#${answer})\n`
     })
 
-    return `${tableOfContents}`
+    return tableOfContents
   }
 
   createBody() {
     let section = `# ${this.answers['title']}\n`
+
     this.answers.sections.includes('License') ? section += `![License](https://img.shields.io/badge/License-${this.answers.License}-white?labelColor=green&style=flat)\n` : ''
+    
     section += `${this.createTableOfContents()}\n`
     
     for (const answer in this.answers) {
