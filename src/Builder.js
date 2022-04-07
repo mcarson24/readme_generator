@@ -21,7 +21,7 @@ export default class ReadMeBuilder {
   createBody() {
     let section = `# ${this.answers['title']}\n`
     this.answers.sections.includes('License') ? section += `![License](https://img.shields.io/badge/License-${this.answers.License}-white?labelColor=green&style=flat)\n` : ''
-    section += `${this.createTableOfContents(this.answers)}\n`
+    section += `${this.createTableOfContents()}\n`
     
     for (const answer in this.answers) {
       if (!this.ignore.includes(answer)) {
