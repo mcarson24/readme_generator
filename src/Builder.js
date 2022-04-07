@@ -1,5 +1,4 @@
 import licenses  from './licenses.js'
-import { license } from './questions.js'
 
 export default class ReadMeBuilder {
   constructor(answers) {
@@ -20,15 +19,16 @@ export default class ReadMeBuilder {
   }
 
   createBody() {
-    let section = `# ${this.answers['title']}\n
-![License](https://img.shields.io/badge/License-${license}-white?labelColor=green&style=flat)\n
-${this.createTableOfContents(this.answers)}\n`
+    let section = `# ${this.answers['title']}\n`
+    this.answers.sections.includes('License') ? section += `![License](https://img.shields.io/badge/License-${this.answers.License}-white?labelColor=green&style=flat)\n` : ''
+    section += `${this.createTableOfContents(this.answers)}\n`
+    
     for (const answer in this.answers) {
       if (!this.ignore.includes(answer)) {
         section += `## ${answer}\n`
         // Add the license body into the generated README
         if (answer === 'License') {
-          section += `${licenses[license]}\n`
+          section += `${licenses[this.answers.License]}\n`
         } else {
           section += `${this.answers[answer]}\n`
         }

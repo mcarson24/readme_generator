@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import inquirer from 'inquirer'
 import ReadMeBuilder from './src/Builder.js'
-import { questions } from './src/questions.js'
+import questions from './src/questions.js'
 
 inquirer
   .prompt(questions)

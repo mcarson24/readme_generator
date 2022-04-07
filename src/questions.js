@@ -1,12 +1,8 @@
 let license
 
-const setLicense = inputLicense => {
-  license = inputLicense
-}
-
 const includes = (answers, section) => answers.sections.includes(section)
 
-const questions = [
+export default [
   {
     name: 'sections',
     message: 'Which sections do you want to include in your README?',
@@ -35,10 +31,7 @@ const questions = [
     message: 'Choose a license',
     type: 'list',
     choices: ['MIT', 'ISC', 'GNU GPLv3', 'Apache License 2.0'],
-    filter: input => {
-      setLicense(input)
-      return input
-    },
+    when: answers => includes(answers, 'License')
   },
   {
     name: 'Installation',
@@ -78,5 +71,3 @@ const questions = [
     when: answers => includes(answers, 'E-mail')
   }
 ]
-
-export { questions, license }
