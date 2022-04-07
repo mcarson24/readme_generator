@@ -20,7 +20,6 @@ const questions = [
       if (!input.length) return 'A Project Title is required'
       return true
     },
-    // filter: input => `# ${input}\n <BADGE HERE>\n`,
   },
   {
     name: 'Description',
@@ -30,7 +29,6 @@ const questions = [
       if (!input.length) return 'A description is required'
       return true
     },
-    // filter: input => `## Description\n${input}\n`
   },
   {
     name: 'License',
