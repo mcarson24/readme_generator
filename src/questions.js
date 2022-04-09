@@ -1,5 +1,3 @@
-let license
-
 const includes = (answers, section) => answers.sections.includes(section)
 
 export default [
